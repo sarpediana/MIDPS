@@ -12,6 +12,10 @@ namespace WindowsFormsApplication1
 {
     public partial class Calculator : Form
     {
+        float a, b;
+        double c, d;
+        int count;
+        bool semn = true;
         public Calculator()
         {
             InitializeComponent();
@@ -79,5 +83,148 @@ namespace WindowsFormsApplication1
             }
         }
 
+        private void button15_Click(object sender, EventArgs e)
+        {
+            c = double.Parse(textBox1.Text);
+            textBox1.Clear();
+            count = 7;
+            label1.Text = " ";
+            semn = true;
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            a = float.Parse(textBox1.Text);
+            textBox1.Clear();
+            count = 4;
+            label1.Text = a.ToString() + "/";
+            semn = true;
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            a = float.Parse(textBox1.Text);
+            textBox1.Clear();
+            count = 3;
+            label1.Text = a.ToString() + "*";
+            semn = true;
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            a = float.Parse(textBox1.Text);
+            textBox1.Clear();
+            count = 2;
+            label1.Text = a.ToString() + "-";
+            semn = true;
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            a = float.Parse(textBox1.Text);
+            textBox1.Clear();
+            count = 1;
+            label1.Text = a.ToString() + "+";
+            semn = true;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + ",";
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            a = float.Parse(textBox1.Text);
+            textBox1.Clear();
+            count = 8;
+            label1.Text = " ";
+            semn = true;
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            a = float.Parse(textBox1.Text);
+            textBox1.Clear();
+            count = 6;
+            label1.Text = " ";
+            semn = true;
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            a = float.Parse(textBox1.Text);
+            textBox1.Clear();
+            count = 5;
+            label1.Text = a.ToString() + "^";
+            semn = true;
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            calculate();
+            label1.Text = "";
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+            label1.Text = "";
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            if (semn == true)
+            {
+                textBox1.Text = "-" + textBox1.Text;
+                semn = false;
+            }
+            else if (semn == false)
+            {
+                textBox1.Text = textBox1.Text.Replace("-", "");
+                semn = true;
+            }
+        }
+        private void calculate()
+        {
+            switch (count)
+            {
+                case 1:
+                    b = a + float.Parse(textBox1.Text);
+                    textBox1.Text = b.ToString();
+                    break;
+                case 2:
+                    b = a - float.Parse(textBox1.Text);
+                    textBox1.Text = b.ToString();
+                    break;
+                case 3:
+                    b = a * float.Parse(textBox1.Text);
+                    textBox1.Text = b.ToString();
+                    break;
+                case 4:
+                    b = a / float.Parse(textBox1.Text);
+                    textBox1.Text = b.ToString();
+                    break;
+                case 5:
+                    b = a * a;
+                    textBox1.Text = b.ToString();
+                    break;
+                case 6:
+                    b = 1 / a;
+                    textBox1.Text = b.ToString();
+                    break;
+                case 7:
+                    d = Math.Sqrt(c);
+                    textBox1.Text = d.ToString();
+                    break;
+                case 8:
+                    b = a / 100;
+                    textBox1.Text = b.ToString();
+                    break;
+                default:
+
+                    break;
+            }
+        }
     }
 }
