@@ -14,11 +14,13 @@ namespace WindowsFormsApplication1
     {
         float a, b;
         double c, d;
-        int count;
+        int count, q=1;
         bool semn = true;
         public Calculator()
         {
             InitializeComponent();
+            this.ActiveControl = textBox1;
+            textBox1.Focus();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -85,60 +87,75 @@ namespace WindowsFormsApplication1
 
         private void button15_Click(object sender, EventArgs e)
         {
-            c = double.Parse(textBox1.Text);
-            textBox1.Clear();
-            count = 7;
-            label1.Text = " ";
-            semn = true;
+            q = 1;
+                c = double.Parse(textBox1.Text);
+            if (c > 0)
+            {
+                textBox1.Clear();
+                count = 7;
+                label1.Text = " ";
+                calculate();
+                semn = true;
+            }
+                      
         }
 
         private void button16_Click(object sender, EventArgs e)
         {
+            q = 1;
             a = float.Parse(textBox1.Text);
             textBox1.Clear();
             count = 4;
-            label1.Text = a.ToString() + "/";
+            label1.Text = a.ToString() + " / ";
             semn = true;
         }
 
         private void button17_Click(object sender, EventArgs e)
         {
+            q = 1;
             a = float.Parse(textBox1.Text);
             textBox1.Clear();
             count = 3;
-            label1.Text = a.ToString() + "*";
+            label1.Text = a.ToString() + " * ";
             semn = true;
         }
 
         private void button18_Click(object sender, EventArgs e)
         {
+            q = 1;
             a = float.Parse(textBox1.Text);
             textBox1.Clear();
             count = 2;
-            label1.Text = a.ToString() + "-";
+            label1.Text = a.ToString() + " - ";
             semn = true;
         }
 
         private void button19_Click(object sender, EventArgs e)
         {
+            q = 1;
             a = float.Parse(textBox1.Text);
             textBox1.Clear();
             count = 1;
-            label1.Text = a.ToString() + "+";
+            label1.Text = a.ToString() + " + ";
             semn = true;
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            textBox1.Text = textBox1.Text + ",";
+            if (q == 1)
+            {
+                textBox1.Text = textBox1.Text + ",";
+                q = q - 1;
+            }
         }
 
         private void button23_Click(object sender, EventArgs e)
         {
-            a = float.Parse(textBox1.Text);
-            textBox1.Clear();
+            a = float.Parse(textBox1.Text);           
             count = 8;
-            label1.Text = " ";
+            label1.Text = textBox1.Text + "%";
+            textBox1.Clear();
+            calculate();
             semn = true;
         }
 
@@ -148,26 +165,186 @@ namespace WindowsFormsApplication1
             textBox1.Clear();
             count = 6;
             label1.Text = " ";
+            calculate();
             semn = true;
         }
 
         private void button21_Click(object sender, EventArgs e)
         {
+            q = 1;
             a = float.Parse(textBox1.Text);
             textBox1.Clear();
             count = 5;
-            label1.Text = a.ToString() + "^";
+            label1.Text = a.ToString() + " ^2";
+            calculate();
             semn = true;
         }
 
         private void button20_Click(object sender, EventArgs e)
         {
+            q = 1;
             calculate();
             label1.Text = "";
         }
 
+        
+
+        
+
+        private void textBox1_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Add)
+            {
+                if (label1.Text != "")
+                {
+                    calculate();
+                    if (textBox1.Text != "" && textBox1.Text != "")
+                    {
+                        a = float.Parse(textBox1.Text);
+                        count = 1;
+                        textBox1.Text = "";
+                        label1.Text = a.ToString() + " + ";
+                        semn = true;
+                        q = 1;
+                    }
+                }
+                else
+                {
+                    if (textBox1.Text != "")
+                    {
+                        a = float.Parse(textBox1.Text);
+                        count = 1;
+                        textBox1.Text = "";
+                        label1.Text = a.ToString() + " + ";
+                        semn = true;
+                        q = 1;
+                    }
+                }
+            }
+            if (e.KeyCode == Keys.Multiply)
+            {
+                if (textBox1.Text != "" && textBox1.Text != "")
+                {
+                    calculate();
+                    if (textBox1.Text != "")
+                    {
+                        a = float.Parse(textBox1.Text);
+                        count = 3;
+                        textBox1.Text = "";
+                        label1.Text = a.ToString() + " * ";
+                        semn = true;
+                        q = 1;
+                    }
+                }
+                else
+                {
+                    if (textBox1.Text != "")
+                    {
+                        a = float.Parse(textBox1.Text);
+                        count = 3;
+                        textBox1.Text = "";
+                        label1.Text = a.ToString() + " * ";
+                        semn = true;
+                        q = 1;
+                    }
+                }
+            }
+            if (e.KeyCode == Keys.Divide)
+            {
+                if (textBox1.Text != "" && textBox1.Text != "")
+                {
+                    calculate();
+                    if (textBox1.Text != "")
+                    {
+                        a = float.Parse(textBox1.Text);
+                        count = 4;
+                        textBox1.Text = "";
+                        label1.Text = a.ToString() + " / ";
+                        semn = true;
+                        q = 1;
+                    }
+                }
+                else
+                {
+                    if (textBox1.Text != "")
+                    {
+                        a = float.Parse(textBox1.Text);
+                        count = 4;
+                        textBox1.Text = "";
+                        label1.Text = a.ToString() + " / ";
+                        semn = true;
+                        q = 1;
+                    }
+                }
+            }
+            if (e.KeyCode == Keys.Subtract)
+            {
+                if (label1.Text != "" && textBox1.Text != "")
+                {
+                    calculate();
+                    if (textBox1.Text != "")
+                    {
+                        a = float.Parse(textBox1.Text);
+                        count = 2;
+                        textBox1.Text = "";
+                        label1.Text = a.ToString() + " - ";
+                        semn = true;
+                        q = 1;
+                    }
+                }
+                else
+                {
+                    if (textBox1.Text != "")
+                    {
+                        a = float.Parse(textBox1.Text);
+                        count = 2;
+                        textBox1.Text = "";
+                        label1.Text = a.ToString() + " - ";
+                        semn = true;
+                        q = 1;
+                    }
+                }
+            }
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (textBox1.Text != "")
+                {
+                    calculate();
+                    label1.Text = "";
+                }
+            }
+            if (e.KeyCode == Keys.Back)
+            {
+                label1.Text = "";
+                textBox1.Text = "";
+                q = 1;
+            }
+            if (e.KeyCode == Keys.Decimal)
+            {
+                if (!textBox1.Text.Contains(","))
+                {
+                    if (q == 1)
+                    {
+                        q = q - 1;
+                        textBox1.Text = textBox1.Text + ",";
+                        textBox1.Select(textBox1.Text.Length, 0);
+                    }
+                }
+            }
+        }
+
+        private void textBox1_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                base.OnKeyPress(e);
+            }
+        }
+
         private void button13_Click(object sender, EventArgs e)
         {
+            q = 1;
             textBox1.Text = "";
             label1.Text = "";
         }
