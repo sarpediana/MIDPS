@@ -102,42 +102,118 @@ namespace WindowsFormsApplication1
 
         private void button16_Click(object sender, EventArgs e)
         {
-            q = 1;
-            a = float.Parse(textBox1.Text);
-            textBox1.Clear();
-            count = 4;
-            label1.Text = a.ToString() + " / ";
-            semn = true;
+            if (label1.Text != "" && textBox1.Text != "")
+            {
+                calculate();
+                if (textBox1.Text != "")
+                {
+                    a = float.Parse(textBox1.Text);
+                    count = 4;
+                    textBox1.Text = "";
+                    label1.Text = a.ToString() + " / ";
+                    semn = true;
+                    q = 1;
+                }
+            }
+            else
+            {
+                if (textBox1.Text != "")
+                {
+                    a = float.Parse(textBox1.Text);
+                    count = 4;
+                    textBox1.Text = "";
+                    label1.Text = a.ToString() + " / ";
+                    semn = true;
+                    q = 1;
+                }
+            }
         }
 
         private void button17_Click(object sender, EventArgs e)
         {
-            q = 1;
-            a = float.Parse(textBox1.Text);
-            textBox1.Clear();
-            count = 3;
-            label1.Text = a.ToString() + " * ";
-            semn = true;
+            if (label1.Text != "" && textBox1.Text != "")
+            {
+                calculate();
+                if (textBox1.Text != "")
+                {
+                    a = float.Parse(textBox1.Text);
+                    count = 3;
+                    textBox1.Text = "";
+                    label1.Text = a.ToString() + " * ";
+                    semn = true;
+                    q = 1;
+                }
+            }
+            else
+            {
+                if (textBox1.Text != "")
+                {
+                    a = float.Parse(textBox1.Text);
+                    count = 3;
+                    textBox1.Text = "";
+                    label1.Text = a.ToString() + " * ";
+                    semn = true;
+                    q = 1;
+                }
+            }
         }
 
         private void button18_Click(object sender, EventArgs e)
         {
-            q = 1;
-            a = float.Parse(textBox1.Text);
-            textBox1.Clear();
-            count = 2;
-            label1.Text = a.ToString() + " - ";
-            semn = true;
+            if (label1.Text != "" && textBox1.Text != "")
+            {
+                calculate();
+                if (textBox1.Text != "")
+                {
+                    a = float.Parse(textBox1.Text);
+                    count = 2;
+                    textBox1.Text = "";
+                    label1.Text = a.ToString() + " - ";
+                    semn = true;
+                    q = 1;
+                }
+            }
+            else
+            {
+                if (textBox1.Text != "")
+                {
+                    a = float.Parse(textBox1.Text);
+                    count = 2;
+                    textBox1.Text = "";
+                    label1.Text = a.ToString() + " - ";
+                    semn = true;
+                    q = 1;
+                }
+            }
         }
 
         private void button19_Click(object sender, EventArgs e)
         {
-            q = 1;
-            a = float.Parse(textBox1.Text);
-            textBox1.Clear();
-            count = 1;
-            label1.Text = a.ToString() + " + ";
-            semn = true;
+            if (label1.Text != "")
+            {
+                calculate();
+                if (label1.Text != "" && textBox1.Text != "")
+                {
+                    a = float.Parse(textBox1.Text);
+                    count = 1;
+                    textBox1.Text = "";
+                    label1.Text = a.ToString() + " + ";
+                    semn = true;
+                    q = 1;
+                }
+            }
+            else
+            {
+                if (textBox1.Text != "")
+                {
+                    a = float.Parse(textBox1.Text);
+                    count = 1;
+                    textBox1.Text = "";
+                    label1.Text = a.ToString() + " + ";
+                    semn = true;
+                    q = 1;
+                }
+            }
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -151,33 +227,42 @@ namespace WindowsFormsApplication1
 
         private void button23_Click(object sender, EventArgs e)
         {
-            a = float.Parse(textBox1.Text);           
-            count = 8;
-            label1.Text = textBox1.Text + "%";
-            textBox1.Clear();
-            calculate();
-            semn = true;
+            if (textBox1.Text != "")
+            {
+                a = float.Parse(textBox1.Text);
+                count = 8;
+                label1.Text = textBox1.Text + "%";
+                textBox1.Clear();
+                calculate();
+                semn = true;
+            }
         }
 
         private void button22_Click(object sender, EventArgs e)
         {
-            a = float.Parse(textBox1.Text);
-            textBox1.Clear();
-            count = 6;
-            label1.Text = " ";
-            calculate();
-            semn = true;
+            if (textBox1.Text != "")
+            {
+                a = float.Parse(textBox1.Text);
+                textBox1.Clear();
+                count = 6;
+                label1.Text = " ";
+                calculate();
+                semn = true;
+            }
         }
 
         private void button21_Click(object sender, EventArgs e)
         {
-            q = 1;
-            a = float.Parse(textBox1.Text);
-            textBox1.Clear();
-            count = 5;
-            label1.Text = a.ToString() + " ^2";
-            calculate();
-            semn = true;
+            if (textBox1.Text!="")
+            {
+                q = 1;
+                a = float.Parse(textBox1.Text);
+                textBox1.Clear();
+                count = 5;
+                label1.Text = a.ToString() + " ^2";
+                calculate();
+                semn = true;
+            }
         }
 
         private void button20_Click(object sender, EventArgs e)
@@ -198,7 +283,7 @@ namespace WindowsFormsApplication1
                 if (label1.Text != "")
                 {
                     calculate();
-                    if (textBox1.Text != "" && textBox1.Text != "")
+                    if (label1.Text != "" && textBox1.Text != "")
                     {
                         a = float.Parse(textBox1.Text);
                         count = 1;
@@ -223,7 +308,7 @@ namespace WindowsFormsApplication1
             }
             if (e.KeyCode == Keys.Multiply)
             {
-                if (textBox1.Text != "" && textBox1.Text != "")
+                if (label1.Text != "" && textBox1.Text != "")
                 {
                     calculate();
                     if (textBox1.Text != "")
@@ -251,7 +336,7 @@ namespace WindowsFormsApplication1
             }
             if (e.KeyCode == Keys.Divide)
             {
-                if (textBox1.Text != "" && textBox1.Text != "")
+                if (label1.Text != "" && textBox1.Text != "")
                 {
                     calculate();
                     if (textBox1.Text != "")
@@ -340,6 +425,11 @@ namespace WindowsFormsApplication1
                 e.Handled = true;
                 base.OnKeyPress(e);
             }
+        }
+
+        private void Calculator_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void button13_Click(object sender, EventArgs e)
