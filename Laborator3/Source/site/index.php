@@ -16,7 +16,7 @@
 				<ul>
 					<li><a href="index.php?page=home">Acasă</a></li>
 					<li><a href="index.php?page=tutorial">Tutoriale</a></li>
-					<li><a href="index.php?page=top">TOP</a></li>
+					<li><a href="index.php?page=bloggs">Video-bloggeri</a></li>
 				</ul>
 			</nav>
 		</header>
