@@ -1,4 +1,4 @@
-package com.sd.jocdememorie;
+package com.sd.memory;
 
 import org.junit.Test;
 

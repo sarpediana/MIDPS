@@ -1,4 +1,4 @@
-package com.sd.jocdememorie;
+package com.sd.memory;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.sd.jocdememorie", appContext.getPackageName());
+        assertEquals("com.sd.memory", appContext.getPackageName());
     }
 }

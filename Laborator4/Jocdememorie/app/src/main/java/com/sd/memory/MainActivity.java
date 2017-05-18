@@ -1,7 +1,11 @@
-package com.sd.jocdememorie;
+package com.sd.memory;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Handler;
+import android.support.annotation.MainThread;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -53,19 +57,19 @@ public class MainActivity extends AppCompatActivity {
 
 
         iv_11.setTag("0");
-        iv_11.setTag("1");
-        iv_11.setTag("2");
-        iv_11.setTag("3");
+        iv_12.setTag("1");
+        iv_13.setTag("2");
+        iv_14.setTag("3");
 
         iv_21.setTag("4");
-        iv_21.setTag("5");
-        iv_21.setTag("6");
-        iv_21.setTag("7");
+        iv_22.setTag("5");
+        iv_23.setTag("6");
+        iv_24.setTag("7");
 
         iv_31.setTag("8");
-        iv_31.setTag("9");
-        iv_31.setTag("10");
-        iv_31.setTag("11");
+        iv_32.setTag("9");
+        iv_33.setTag("10");
+        iv_34.setTag("11");
 
         frontOfCardsResources();
 
@@ -75,174 +79,152 @@ public class MainActivity extends AppCompatActivity {
         //changing the color of the second player
         tv_p2.setTextColor(Color.GRAY);
 
-        iv_11.setOnClickListener(new View.OnClickListener()
-        {
+        iv_11.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view)
-            {
+            public void onClick(View view) {
                 int theCard = Integer.parseInt((String) view.getTag());
                 doStuff(iv_11, theCard);
             }
         });
 
-        iv_12.setOnClickListener(new View.OnClickListener()
-        {
+        iv_12.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view)
-            {
+            public void onClick(View view) {
                 int theCard = Integer.parseInt((String) view.getTag());
                 doStuff(iv_12, theCard);
             }
         });
 
-        iv_13.setOnClickListener(new View.OnClickListener()
-        {
+        iv_13.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view)
-            {
+            public void onClick(View view) {
                 int theCard = Integer.parseInt((String) view.getTag());
                 doStuff(iv_13, theCard);
             }
         });
 
-        iv_14.setOnClickListener(new View.OnClickListener()
-        {
+        iv_14.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view)
-            {
+            public void onClick(View view) {
                 int theCard = Integer.parseInt((String) view.getTag());
                 doStuff(iv_14, theCard);
             }
         });
 
-        iv_21.setOnClickListener(new View.OnClickListener()
-        {
+        iv_21.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view)
-            {
+            public void onClick(View view) {
                 int theCard = Integer.parseInt((String) view.getTag());
                 doStuff(iv_21, theCard);
             }
         });
 
-        iv_22.setOnClickListener(new View.OnClickListener()
-        {
+        iv_22.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view)
-            {
+            public void onClick(View view) {
                 int theCard = Integer.parseInt((String) view.getTag());
                 doStuff(iv_22, theCard);
             }
         });
 
-        iv_23.setOnClickListener(new View.OnClickListener()
-        {
+        iv_23.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view)
-            {
+            public void onClick(View view) {
                 int theCard = Integer.parseInt((String) view.getTag());
                 doStuff(iv_23, theCard);
             }
         });
 
-        iv_24.setOnClickListener(new View.OnClickListener()
-        {
+        iv_24.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view)
-            {
+            public void onClick(View view) {
                 int theCard = Integer.parseInt((String) view.getTag());
                 doStuff(iv_24, theCard);
             }
         });
 
-        iv_31.setOnClickListener(new View.OnClickListener()
-        {
+        iv_31.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view)
-            {
+            public void onClick(View view) {
                 int theCard = Integer.parseInt((String) view.getTag());
                 doStuff(iv_31, theCard);
             }
         });
 
-        iv_32.setOnClickListener(new View.OnClickListener()
-        {
+        iv_32.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view)
-            {
+            public void onClick(View view) {
                 int theCard = Integer.parseInt((String) view.getTag());
                 doStuff(iv_32, theCard);
             }
         });
 
-        iv_33.setOnClickListener(new View.OnClickListener()
-        {
+        iv_33.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view)
-            {
+            public void onClick(View view) {
                 int theCard = Integer.parseInt((String) view.getTag());
                 doStuff(iv_33, theCard);
             }
         });
 
-        iv_34.setOnClickListener(new View.OnClickListener()
-        {
+        iv_34.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view)
-            {
+            public void onClick(View view) {
                 int theCard = Integer.parseInt((String) view.getTag());
                 doStuff(iv_34, theCard);
             }
         });
-        private void doStuff(ImageView iv, int card)
+    }
+
+    private void doStuff(ImageView iv, int card)
     {
         if(cardsArray[card] == 101)
         {
-            iv_11.setImageResource(image101);
+            iv.setImageResource(image101);
         }
         else if (cardsArray[card] == 102 )
         {
-            iv_11.setImageResource(image102);
+            iv.setImageResource(image102);
         }
         else if (cardsArray[card] == 103 )
         {
-            iv_11.setImageResource(image103);
+            iv.setImageResource(image103);
         }
         else if (cardsArray[card] == 104 )
         {
-            iv_11.setImageResource(image104);
+            iv.setImageResource(image104);
         }
         else if (cardsArray[card] == 105 )
         {
-            iv_11.setImageResource(image105);
+            iv.setImageResource(image105);
         }
         else if (cardsArray[card] == 106 )
         {
-            iv_11.setImageResource(image106);
+            iv.setImageResource(image106);
         }
         else if (cardsArray[card] == 201 )
         {
-            iv_11.setImageResource(image201);
+            iv.setImageResource(image201);
         }
         else if (cardsArray[card] == 202 )
         {
-            iv_11.setImageResource(image202);
+            iv.setImageResource(image202);
         }
         else if (cardsArray[card] == 203 )
         {
-            iv_11.setImageResource(image203);
+            iv.setImageResource(image203);
         }
         else if (cardsArray[card] == 204 )
         {
-            iv_11.setImageResource(image204);
+            iv.setImageResource(image204);
         }
         else if (cardsArray[card] == 205 )
         {
-            iv_11.setImageResource(image205);
+            iv.setImageResource(image205);
         }
         else if (cardsArray[card] == 206 )
         {
-            iv_11.setImageResource(image206);
+            iv.setImageResource(image206);
         }
         // cauta imaginea selectata
         if(cardNumber == 1)
@@ -295,57 +277,57 @@ public class MainActivity extends AppCompatActivity {
         if(firstCard == secondCard)
         {
             if(clickedFirst == 0)
-        {
-            iv_11.setVisibility(View.INVISIBLE);
-        }
-        else if(clickedFirst == 1)
-        {
-            iv_12.setVisibility(View.INVISIBLE);
-        }
-        else if(clickedFirst == 2)
-        {
-            iv_13.setVisibility(View.INVISIBLE);
-        }
-        else if(clickedFirst == 3)
-        {
-            iv_14.setVisibility(View.INVISIBLE);
-        }
-        else if(clickedFirst == 4 )
-        {
-            iv_21.setVisibility(View.INVISIBLE);
-        }
-        else if(clickedFirst == 5)
-        {
-            iv_22.setVisibility(View.INVISIBLE);
-        }
-        else if(clickedFirst == 6)
-        {
-            iv_23.setVisibility(View.INVISIBLE);
-        }
-        else if(clickedFirst == 7)
-        {
-            iv_24.setVisibility(View.INVISIBLE);
-        }
-        else if(clickedFirst == 8)
-        {
-            iv_31.setVisibility(View.INVISIBLE);
-        }
-        else if(clickedFirst == 9)
-        {
-            iv_32.setVisibility(View.INVISIBLE);
-        }
-        else if(clickedFirst == 10)
-        {
-            iv_33.setVisibility(View.INVISIBLE);
-        }
-        else if(clickedFirst == 11)
-        {
-            iv_34.setVisibility(View.INVISIBLE);
-        }
+            {
+                iv_11.setVisibility(View.INVISIBLE);
+            }
+            else if(clickedFirst == 1)
+            {
+                iv_12.setVisibility(View.INVISIBLE);
+            }
+            else if(clickedFirst == 2)
+            {
+                iv_13.setVisibility(View.INVISIBLE);
+            }
+            else if(clickedFirst == 3)
+            {
+                iv_14.setVisibility(View.INVISIBLE);
+            }
+            else if(clickedFirst == 4 )
+            {
+                iv_21.setVisibility(View.INVISIBLE);
+            }
+            else if(clickedFirst == 5)
+            {
+                iv_22.setVisibility(View.INVISIBLE);
+            }
+            else if(clickedFirst == 6)
+            {
+                iv_23.setVisibility(View.INVISIBLE);
+            }
+            else if(clickedFirst == 7)
+            {
+                iv_24.setVisibility(View.INVISIBLE);
+            }
+            else if(clickedFirst == 8)
+            {
+                iv_31.setVisibility(View.INVISIBLE);
+            }
+            else if(clickedFirst == 9)
+            {
+                iv_32.setVisibility(View.INVISIBLE);
+            }
+            else if(clickedFirst == 10)
+            {
+                iv_33.setVisibility(View.INVISIBLE);
+            }
+            else if(clickedFirst == 11)
+            {
+                iv_34.setVisibility(View.INVISIBLE);
+            }
 
 
 
-        if(clickedSecond == 0)
+            if(clickedSecond == 0)
             {
                 iv_11.setVisibility(View.INVISIBLE);
             }
@@ -397,7 +379,7 @@ public class MainActivity extends AppCompatActivity {
             if(turn == 1 )
             {
                 playerPoints++;
-                tv_p1.setText("P1: " +playerPoints);
+                tv_p1.setText("P1: " + playerPoints);
             }else if (turn == 2)
             {
                 cpuPoints++;
@@ -406,20 +388,20 @@ public class MainActivity extends AppCompatActivity {
         }
         else
         {
-            iv_11.setImageResource(R.drawable.ic_sem);
-            iv_12.setImageResource(R.drawable.ic_sem);
-            iv_13.setImageResource(R.drawable.ic_sem);
-            iv_14.setImageResource(R.drawable.ic_sem);
+            iv_11.setImageResource(R.drawable.ic_back);
+            iv_12.setImageResource(R.drawable.ic_back);
+            iv_13.setImageResource(R.drawable.ic_back);
+            iv_14.setImageResource(R.drawable.ic_back);
 
-            iv_21.setImageResource(R.drawable.ic_sem);
-            iv_22.setImageResource(R.drawable.ic_sem);
-            iv_23.setImageResource(R.drawable.ic_sem);
-            iv_24.setImageResource(R.drawable.ic_sem);
+            iv_21.setImageResource(R.drawable.ic_back);
+            iv_22.setImageResource(R.drawable.ic_back);
+            iv_23.setImageResource(R.drawable.ic_back);
+            iv_24.setImageResource(R.drawable.ic_back);
 
-            iv_31.setImageResource(R.drawable.ic_sem);
-            iv_32.setImageResource(R.drawable.ic_sem);
-            iv_33.setImageResource(R.drawable.ic_sem);
-            iv_34.setImageResource(R.drawable.ic_sem);
+            iv_31.setImageResource(R.drawable.ic_back);
+            iv_32.setImageResource(R.drawable.ic_back);
+            iv_33.setImageResource(R.drawable.ic_back);
+            iv_34.setImageResource(R.drawable.ic_back);
 
             if (turn == 1)
             {
@@ -434,7 +416,7 @@ public class MainActivity extends AppCompatActivity {
                 tv_p2.setTextColor(Color.GRAY);
                 tv_p1.setTextColor(Color.BLACK);
             }
-    }
+        }
         iv_11.setEnabled(true);
         iv_12.setEnabled(true);
         iv_13.setEnabled(true);
@@ -449,28 +431,62 @@ public class MainActivity extends AppCompatActivity {
         iv_34.setEnabled(true);
 
         checkEnd();
-
     }
-        private void  frontOfCardsResources()
+
+    private void checkEnd()
     {
-        image101 = R.drawable.ciine;
-        image102 = R.drawable.iep;
-        image103 = R.drawable.pur;
-        image104 = R.drawable.ham;
-        image105 = R.drawable.Tom;
-        image106 = R.drawable.vever;
+        if (iv_11.getVisibility() == View.INVISIBLE&&
+                iv_12.getVisibility() == View.INVISIBLE&&
+                iv_13.getVisibility() == View.INVISIBLE&&
+                iv_14.getVisibility() == View.INVISIBLE&&
+                iv_21.getVisibility() == View.INVISIBLE&&
+                iv_22.getVisibility() == View.INVISIBLE&&
+                iv_23.getVisibility() == View.INVISIBLE&&
+                iv_24.getVisibility() == View.INVISIBLE&&
+                iv_31.getVisibility() == View.INVISIBLE&&
+                iv_32.getVisibility() == View.INVISIBLE&&
+                iv_33.getVisibility() == View.INVISIBLE&&
+                iv_34.getVisibility() == View.INVISIBLE){
 
-        image101 = R.drawable.ic_ciine;
-        image102 = R.drawable.ic_iep;
-        image103 = R.drawable.ic_pur;
-        image104 = R.drawable.ic_ham;
-        image105 = R.drawable.ic_tom;
-        image106 = R.drawable.ic_vever;
-
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);
+            alertDialogBuilder
+                    .setMessage("GAME OVER!\nP1: " + playerPoints + "\n P2: " + cpuPoints)
+                    .setCancelable(false)
+                    .setPositiveButton("NEW", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                            startActivity(intent);
+                            finish();
+                        }
+                    })
+                    .setNegativeButton("EXIT", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            finish();
+                        }
+                    });
+            AlertDialog alertDialog = alertDialogBuilder.create();
+            alertDialog.show();
+        }
 
     }
 
+    private void  frontOfCardsResources()
+    {
+        image101 = R.drawable.ic_image101;
+        image102 = R.drawable.ic_image102;
+        image103 = R.drawable.ic_image103;
+        image104 = R.drawable.ic_image104;
+        image105 = R.drawable.ic_image105;
+        image106 = R.drawable.ic_image106;
 
-
+        image201 = R.drawable.ic_image201;
+        image202 = R.drawable.ic_image202;
+        image203 = R.drawable.ic_image203;
+        image204 = R.drawable.ic_image204;
+        image205 = R.drawable.ic_image205;
+        image206 = R.drawable.ic_image206;
     }
 }
+
