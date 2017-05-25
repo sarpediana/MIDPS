@@ -13,8 +13,7 @@
 11. Am efectuat merge de pe ambele branch-uri.
 
 # Raportul in format pdf
-Click [here]
-(https://github.com/sarpediana/MIDPS/blob/master/Laborator1/Source/Lab1.pdf)
+Click [here](https://github.com/sarpediana/MIDPS/blob/master/Laborator1/Source/Lab1.pdf)
 
 # Greutatile pe care le-am intilnit in timpul efectuarii 
 
