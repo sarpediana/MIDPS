@@ -2,7 +2,7 @@
 
 ##Cuprins
 
-### [Lab 2](https://github.com/sarpediana/MIDPS/tree/master/Laborator1)
+### [Lab 1](https://github.com/sarpediana/MIDPS/tree/master/Laborator1)
 **Version Control Systems si modul de setare a unui server**
 
 ### [Lab 2](https://github.com/sarpediana/MIDPS/tree/master/Laborator2)
